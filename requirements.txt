@@ -2,3 +2,5 @@ fastapi
 uvicorn
 mlflow
 scikit-learn
+streamlit
+requests
