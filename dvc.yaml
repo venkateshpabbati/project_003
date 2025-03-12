@@ -1,0 +1,13 @@
+stages:
+  download:
+    cmd: python src/download_data.py
+    outs:
+      - data/BostonHousing.csv
+  train:
+    cmd: python src/train.py --data data/BostonHousing.csv --model model.pkl
+    deps:
+      - data/BostonHousing.csv
+      - src/data_preprocessing.py
+      - src/train.py
+    outs:
+      - model.pkl
