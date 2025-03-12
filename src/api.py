@@ -1,5 +1,5 @@
-import pickle
-import mlflow
+# import pickle
+import mlflow.sklearn
 from fastapi import FastAPI
 from pydantic import BaseModel
 import numpy as np

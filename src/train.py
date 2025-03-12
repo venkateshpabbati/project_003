@@ -1,9 +1,11 @@
 import mlflow
-import pandas as pd
+import mlflow.sklearn
+# import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from data_preprocessing import load_data
 
+# Set up MLflow to track experiments locally
 mlflow.set_tracking_uri("sqlite:///mlruns.db")  # Local MLflow tracking
 mlflow.set_experiment("linear_regression")
 
