@@ -7,5 +7,5 @@ def load_data():
     X = df.drop(columns=['medv'])  # Features
     y = df['medv']  # Target variable
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    return X_train, X_test, y_train, y_test
+    x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    return x_train, x_test, y_train, y_test

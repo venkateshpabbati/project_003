@@ -8,7 +8,7 @@ if st.button("Predict"):
     if features:
         try:
             data = [float(i) for i in features.split(",")]
-            response = requests.post("http://127.0.0.1:8000/predict", json={"data": data})
+            response = requests.post("http://127.0.0.1:8501", json={"data": data})
             response.raise_for_status()  # Raise an error for bad status codes
             prediction = response.json().get("prediction")
             if prediction is not None:
