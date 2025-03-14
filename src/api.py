@@ -1,11 +1,10 @@
-# import pickle
 import mlflow.sklearn
 from fastapi import FastAPI
 from pydantic import BaseModel
 import numpy as np
 
 mlflow.set_tracking_uri("sqlite:///mlruns.db")
-model = mlflow.sklearn.load_model("mlruns/0/model")
+model = mlflow.sklearn.load_model("mlruns/1/32502fa7c1e54517a187af829df7dd96/artifacts/model")
 
 app = FastAPI()
 
