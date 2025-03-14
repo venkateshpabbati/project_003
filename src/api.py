@@ -1,5 +1,5 @@
 import mlflow.sklearn
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import numpy as np
 
@@ -13,6 +13,9 @@ class Features(BaseModel):
 
 @app.post("/predict")
 def predict(features: Features):
-    input_data = np.array(features.data).reshape(1, -1)
-    prediction = model.predict(input_data)
-    return {"prediction": prediction.tolist()}
+    try:
+        input_data = np.array(features.data).reshape(1, -1)
+        prediction = model.predict(input_data)
+        return {"prediction": prediction.tolist()}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Prediction error: {e}")
